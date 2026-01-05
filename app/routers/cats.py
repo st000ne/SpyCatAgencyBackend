@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from .. import models, schemas
-from ..deps import get_db
-from ..services.cat_breed_validator import validate_breed
+import app.models as models
+import app.schemas as schemas
+from app.deps import get_db
+from app.services.cat_breed_validator import validate_breed
 
 router = APIRouter(prefix="/cats", tags=["Cats"])
 
